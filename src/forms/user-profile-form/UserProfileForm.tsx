@@ -36,6 +36,8 @@ const UserProfileForm = ({ isLoading, onSave, currentUser }: Props) => {
     useEffect(() => {
         form.reset(currentUser)
     }, [currentUser, form])
+
+    console.log("trgrfsda", currentUser)
     return (
         <Form {...form}>
             <form

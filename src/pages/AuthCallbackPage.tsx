@@ -11,7 +11,8 @@ export default function AuthCallbackPage() {
     //use ref will not render the page whenever the state will change 
     const hasCreatedUser = useRef(false)
     const { user } = useAuth0();
-    const { createUser, isLoading, isError, isSuccess } = useCreateMyUser();
+    // const { createUser, isLoading, isError, isSuccess } = useCreateMyUser();
+    const { createUser } = useCreateMyUser();
 
     useEffect(() => {
         if (user?.sub && user?.email && !hasCreatedUser.current) {
