@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage"
 import AuthCallbackPage from "./pages/AuthCallbackPage"
 import UserProfilePage from "./pages/UserProfilePage"
 import ProtectedRoute from "./ProtectedRoute"
+import ProtectedRoutes from "./auth/ProtectedRoute"
+import ManageRestaurantPage from "./pages/ManageRestaurantPage"
 
 export const AppRoutes = () => {
     return (
@@ -18,6 +20,10 @@ export const AppRoutes = () => {
                     />
                 }
             />
+            <Route element={<ProtectedRoutes />} >
+                <Route path="/manage-restaurant" element={<Layout><ManageRestaurantPage /></Layout>}>
+                </Route>
+            </Route>
             <Route path="*" element={<Navigate to="/" />} />
         </Routes>
     )
